@@ -1,18 +1,22 @@
 @import "tailwindcss";
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@theme {
+  --color-neon : #0ff;
+  --color-darkBg : #1a1a2e;
+  --color-btnBg : #ff007f;
+  --default-font-family-pixel: ["Press Start 2P", "cursive"];
+  
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.glow {
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+}
+.btn-glow {
+  box-shadow: 0 0 5px #ff007f, 0 0 15px #ff007f;
 }
