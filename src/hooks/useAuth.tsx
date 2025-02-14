@@ -3,7 +3,7 @@ import React, { createContext, ReactNode, useContext, useState } from "react";
 // Define AuthContext Type
 interface AuthContextType {
   user: string | null;
-  login: (username: string) => void;
+  login: (email: string, password: string) => boolean;
   logout: () => void;
 }
 
@@ -11,11 +11,17 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Provider Component
-export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const AuthProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [user, setUser] = useState<string | null>(null);
 
-  const login = (username: string) => {
-    setUser(username); // Simulate login
+  const login = (email: string, password: string): boolean => {
+    if (email === "admin@example.com" && password === "password123") {
+      setUser(email);
+      return true;
+    }
+    return false;
   };
 
   const logout = () => {
