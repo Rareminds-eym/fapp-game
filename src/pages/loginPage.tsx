@@ -45,7 +45,7 @@ const LoginPage: React.FC = () => {
             type="submit"
             className="w-full p-3 bg-btnBg text-white font-bold rounded-md btn-glow hover:scale-105 transition-transform"
           >
-             Start Game
+            Start Game
           </button>
         </form>
       </div>
